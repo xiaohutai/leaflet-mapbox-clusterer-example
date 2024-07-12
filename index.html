@@ -40,20 +40,25 @@ Resources
 <body>
     <div id='map'></div>
     <style>
-    #map {
-        margin: auto;
-        width: 80vw;
-        height: 80vh;
-    }
+        body {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+
+        #map {
+            margin: auto;
+            width: 100vw;
+            height: 100vh;
+        }
     </style>
     <script>
     // Grab your access token via https://www.mapbox.com
     const accessToken = 'ACCESS_TOKEN';
     const center      = [ 52.081813, 4.2932258 ];
     const zoom        = 12;
-
-    const map     = L.map('map').setView(center, zoom);
-    const markers = L.markerClusterGroup();
+    const map         = L.map('map').setView(center, zoom);
+    const markers     = L.markerClusterGroup();
 
     // See Mapbox API Documentation
     // https://www.mapbox.com/api-documentation/#maps
@@ -61,6 +66,8 @@ Resources
     // Or pick a different one:
     // - https://leaflet-extras.github.io/leaflet-providers/preview/
     // - https://wiki.openstreetmap.org/wiki/Tile_servers
+    // - https://openmaptiles.org/styles/
+    // - https://alexurquhart.github.io/free-tiles/
     L.tileLayer(
         // 'https://api.mapbox.com/styles/v1/mapbox/streets-v10/tiles/{z}/{x}/{y}?access_token=' + accessToken,
         // 'https://api.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' + accessToken,
